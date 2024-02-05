@@ -1,11 +1,68 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
+import gsap from "gsap";
+
 const Hero = () => {
+  const component = useRef(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      // create as many GSAP animations and/or ScrollTriggers here as you want...
+      gsap
+        .timeline()
+        .fromTo(
+          ".name-animation",
+          { x: -100, opacity: 0, rotate: -10 },
+          {
+            x: 0,
+            opacity: 1,
+            rotate: 0,
+            ease: "elastic.out(1,0.3)",
+            duration: 1,
+            transformOrigin: "left top",
+            delay: 0.5,
+            stagger: { each: 0.1, from: "random" },
+          },
+        )
+        .fromTo(
+          ".job-title",
+          {
+            y: 20,
+            opacity: 0,
+            scale: 1.2,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scale: 1,
+            ease: "elastic.out(1,0.3)",
+          },
+        );
+    }, component);
+    return () => ctx.revert(); // cleanup!
+  }, []);
+
+  const renderLetters = (name, key) => {
+    if (!name) return;
+    return name.split("").map((letter, index) => (
+      <span
+        key={index}
+        className={`name-animation name-animation-${key}-index inline-block opacity-0 `}
+      >
+        {letter}
+      </span>
+    ));
+  };
+
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className={`relative w-full h-screen mx-auto`}
+      ref={component}
+      >
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -16,11 +73,19 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
+            Hi, I'm&nbsp;
+            <span className='text-[#915EFF]'>
+              {renderLetters("Jayson", "name")}
+            </span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
+            <span className="job-title block opacity-0">
+              Senior Business Analyst
+            </span>
+            {/* <br className='sm:block hidden' /> */}
+            <span className="job-title block opacity-0">
+              Silverlake Digital Economy Sdn Bhd
+            </span>
           </p>
         </div>
       </div>
