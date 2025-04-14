@@ -47,13 +47,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Detail-oriented and results-driven Business Analyst with more than 
-        17 years of experience in business development, project management, 
-        user-acceptance testing, and system support of credit card system. 
-        Able to handle critical situations, make crucial decisions, and 
-        efficiently supervise resources. Into details and pays importance to 
-        quality of work. Manage work effectively and efficiently with minimal 
-        supervision. Good interpersonal and communication skills.
+        Detail-oriented and results-driven professional with over 18 years 
+        of experience in business development, project management, user 
+        acceptance testing, and system support for credit card systems. 
+        Skilled in handling critical situations, making strategic decisions, 
+        and efficiently managing resources. Committed to delivering high-quality 
+        work with keen attention to detail. Able to work independently with 
+        minimal supervision while maintaining strong interpersonal and communication 
+        skills.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

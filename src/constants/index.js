@@ -117,11 +117,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Senior Software Engineer",
+    title: "Junior Software Engineer",
     company_name: "Accenture",
     icon: accenture,
     iconBg: "#383E56",
-    date: "Jun 2006 - Nov 2009",
+    date: "Jun 2006 - Sep 2006",
     points: [
       "Acquire proficiency in relevant programming languages, frameworks, and tools through training programs and hands-on projects.",
       "Contribute to coding tasks, develop software components, and follow coding standards and best practices.",
@@ -151,7 +151,7 @@ const experiences = [
     points: [
       "Collect and analyze information from stakeholders to understand their needs and translate them into detailed and actionable requirements for development teams.",
       "Examine and evaluate existing business processes, identifying areas for improvement, efficiency gains, or cost reductions, and recommend solutions to enhance overall business performance.",
-      "Analyze data to provide insights that support decision-making. They help organizations understand trends, patterns, and potential areas for improvement by leveraging data-driven approaches.",
+      "Analyze data to provide insights that support decision-making. Help organizations understand trends, patterns, and potential areas for improvement by leveraging data-driven approaches.",
       "Facilitate discussions between various stakeholders, ensuring alignment on project goals, managing expectations, and fostering collaboration for successful project outcomes.",
     ],
   },
